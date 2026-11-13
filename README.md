@@ -43,7 +43,15 @@ The project uses a Flask REST API to provide basic e-governance services and app
 4. Prometheus collects metrics from the application's `/metrics` endpoint.
 5. Grafana queries Prometheus and visualizes application performance.
 6. GitLab stores the project source code and contains the CI/CD pipeline configuration.
-
+flowchart TD
+    A[Developer] --> B[GitLab Repository]
+    B --> C[GitLab CI/CD Pipeline]
+    C --> D[Unit Tests]
+    D --> E[Docker Image Build]
+    E --> F[Kubernetes Deployment]
+    F --> G[Flask Application]
+    G --> H[Prometheus]
+    H --> I[Grafana Dashboard]
 ## 6. Running the Application
 
 Build the Docker image:
