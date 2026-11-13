@@ -37,12 +37,11 @@ The project uses a Flask REST API to provide basic e-governance services and app
 
 ## 5. Architecture
 
-1. Users send HTTP requests to the Flask REST API.
-2. Docker packages the application and its dependencies.
-3. Kubernetes deploys and maintains two application replicas.
-4. Prometheus collects metrics from the application's `/metrics` endpoint.
-5. Grafana queries Prometheus and visualizes application performance.
-6. GitLab stores the project source code and contains the CI/CD pipeline configuration.
+## 5. Architecture
+
+The following diagram illustrates the workflow and interaction between the technologies used in this project.
+
+```mermaid
 flowchart TD
     A[Developer] --> B[GitLab Repository]
     B --> C[GitLab CI/CD Pipeline]
@@ -52,7 +51,7 @@ flowchart TD
     F --> G[Flask Application]
     G --> H[Prometheus]
     H --> I[Grafana Dashboard]
-## 6. Running the Application
+```
 
 Build the Docker image:
 
